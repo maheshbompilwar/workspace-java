@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Portal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div class="fluid">
+    <div th:replace="/header :: header"> </div>
+    <div class="container">
+        <form action="#" th:action="@{/updateStudent}" th:object="${student}" , method="POST">
+            <div class="form-group">
+                <input type="text" hidden class="form-control" id="inputId" th:text="${student.id}"
+                       th:field="*{id}">
+            </div>
+            <div class="form-group">
+                <label for="inputFirstName">First Name</label>
+                <input type="text" class="form-control" id="inputFirstName" th:text="${student.firstName}"
+                       th:field="*{firstName}">
+            </div>
+            <div class="form-group">
+                <label for="inputLastName">Last Name</label>
+                <input type="text" class="form-control" id="inputLastName" th:text="${student.lastName}"
+                       th:field="*{lastName}">
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Email address</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com"
+                       th:text="${student.emailId}" th:field="*{emailId}">
+            </div>
+            <button type="submit" class="btn btn-primary">Update Student</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

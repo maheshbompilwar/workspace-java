@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Portal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div class="fluid">
+    <div th:replace="/header :: header"> </div>
+    <div class="container">
+<div>
+    <h1>Student List</h1>
+    <table>
+        <tbody>
+        <tr>
+            <td>Student Id: </td>
+            <td th:text="${student.id}"></td>
+        </tr>
+        <tr>
+            <td>First Name:</td>
+            <td th:text="${student.firstName}"></td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td th:text="${student.lastName}"></td>
+        </tr>
+        <tr>
+            <td>EmailId:</td>
+            <td th:text="${student.emailId}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+</body>
+</body>
+</html>
